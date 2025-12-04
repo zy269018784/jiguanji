@@ -48,9 +48,13 @@ endif ()
 #]]
 file(GLOB_RECURSE SRC_LIST ${SRC_PREFIX} ${SRC_PREFIX}/*.cpp ${SRC_PREFIX}/*.c ${SRC_PREFIX}/*.h)
 
+file(GLOB_RECURSE QML_SRC_LIST ${SRC_PREFIX}/QML ${SRC_PREFIX}/QML/*.qml)
+
 if (CMAKE_SYSTEM_NAME STREQUAL Windows)
 	source_group (TREE "${SRC_PREFIX}" PREFIX ${PROJECT_NAME} FILES ${SRC_LIST})
 endif ()
+
+
 
 add_executable (${PROJECT_NAME}  ${SRC_LIST})
 
@@ -66,3 +70,10 @@ endif()
 target_include_directories (${PROJECT_NAME}	PUBLIC ${INCLUDE_PATH})
 target_link_directories (${PROJECT_NAME}	PUBLIC ${LINK_PATH})
 target_link_libraries (${PROJECT_NAME} PUBLIC ${LIBRARYS})
+
+add_custom_command(
+		TARGET ${PROJECT_NAME} POST_BUILD
+		COMMAND ${CMAKE_COMMAND} -E copy_directory
+		"${SRC_PREFIX}/MyQML"
+		"${CMAKE_BINARY_DIR}/Release/MyQML"
+)
