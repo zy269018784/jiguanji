@@ -6,35 +6,28 @@ Rectangle
     ColumnLayout {
         RowLayout {
             Label {
-                text: "最大速度"
+                text: "采样率:"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
             }
         }
         RowLayout {
             Label {
-                text: "最小速度"
+                text: "滤波等级:"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
             }
         }
         RowLayout {
             Label {
-                text: "对焦精度"
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignVCenter
-            }
-        }
-        RowLayout {
-            Label {
-                text: "超时时间"
+                text: "标准系数:"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
             }
         }
         RowLayout {
             Button {
-                text: "保存对焦参数"
+                text: "保存传感器参数"
             }
         }
     }

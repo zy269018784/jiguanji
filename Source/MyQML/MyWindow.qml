@@ -9,6 +9,7 @@ Window {
     title: qsTr("激光机")
     color: "#F0F0F0"
     Rectangle {
+        visible: false
         x: parent.width - 600
         y: 0
         width: 200
@@ -54,6 +55,7 @@ Window {
 
     TextedHeightWidget
     {
+        visible: false
         id: controlProgressBar
         x: window.width - 600
         y: 0
@@ -69,6 +71,12 @@ Window {
         width: 300
         spacing: 2
 
+
+        FocusControl {
+            color: "#00000000"
+            width: parent.width
+            height: 40
+        }
         WorkMode {
             color: "#00000000"
             width: parent.width
@@ -95,9 +103,9 @@ Window {
         }
     }
     ColumnLayout {
-        x: window.width - 300
+        x: window.width - 600
         y: 0
-        width: 300
+        width: 600
         spacing: 0
 
         StatusArea {

@@ -38,27 +38,29 @@ Rectangle
             }
         }
     }
-    Rectangle {
+
+    FocusParameters {
         x: 0
         y: 40
         width: parent.width
         height: 100
-        SwipeView {
-            id: swipeView
-            currentIndex: tabBar.currentIndex
-            anchors.fill: parent
-            Rectangle {
-                color: "#ff0000"
-                visible: swipeView.currentIndex == 0
-            }
-            Rectangle {
-                color: "#ffFF00"
-                visible: swipeView.currentIndex == 1
-            }
-            Rectangle {
-                color: "#0000FF"
-                visible: swipeView.currentIndex == 2
-            }
-        }
+        color: "#ff0000"
+        visible: tabBar.currentIndex === 0
+    }
+    CommunicationParameters {
+        x: 0
+        y: 40
+        width: parent.width
+        height: 100
+        color: "#ffFF00"
+        visible: tabBar.currentIndex === 1
+    }
+    SensorParameters {
+        x: 0
+        y: 40
+        width: parent.width
+        height: 100
+        color: "#0000FF"
+        visible: tabBar.currentIndex === 2
     }
 }

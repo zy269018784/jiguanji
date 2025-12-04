@@ -6,35 +6,42 @@ Rectangle
     ColumnLayout {
         RowLayout {
             Label {
-                text: "最大速度"
+                text: "串口号"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
             }
         }
         RowLayout {
             Label {
-                text: "最小速度"
+                text: "波特率"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
             }
         }
         RowLayout {
             Label {
-                text: "对焦精度"
+                text: "数据位"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
             }
         }
         RowLayout {
             Label {
-                text: "超时时间"
+                text: "校验位"
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignVCenter
+            }
+        }
+        RowLayout {
+            Label {
+                text: "停止位"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
             }
         }
         RowLayout {
             Button {
-                text: "保存对焦参数"
+                text: "保存通信参数"
             }
         }
     }
