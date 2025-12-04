@@ -44,7 +44,7 @@ Rectangle
         y: 40
         width: parent.width
         height: 100
-        color: "#ff0000"
+        color: "#00000000"
         visible: tabBar.currentIndex === 0
     }
     CommunicationParameters {
@@ -52,7 +52,7 @@ Rectangle
         y: 40
         width: parent.width
         height: 100
-        color: "#ffFF00"
+        color: "#00000000"
         visible: tabBar.currentIndex === 1
     }
     SensorParameters {
@@ -60,7 +60,7 @@ Rectangle
         y: 40
         width: parent.width
         height: 100
-        color: "#0000FF"
+        color: "#00000000"
         visible: tabBar.currentIndex === 2
     }
 }

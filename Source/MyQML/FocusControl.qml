@@ -3,16 +3,29 @@ import QtQuick.Controls.Basic
 import QtQuick.Layouts
 Rectangle
 {
-    RowLayout {
-        //anchors.horizontalCenter: parent.horizontalCenter
-        Button {
-            text: "一键归零"
+    ColumnLayout
+    {
+        RowLayout {
+            //anchors.horizontalCenter: parent.horizontalCenter
+            Button {
+                text: "自动对焦"
+            }
+            Button {
+                text: "手动上调"
+            }
+            Button {
+                text: "手动下调"
+            }
+            Button {
+                text: "停止"
+            }
+            Button {
+                text: "紧急停止"
+            }
         }
-        Button {
-            text: "常用位置1"
-        }
-        Button {
-            text: "常用位置2"
+        MySlider
+        {
+            width: parent.width
         }
     }
 }

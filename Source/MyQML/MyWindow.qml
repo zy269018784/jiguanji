@@ -75,7 +75,7 @@ Window {
         FocusControl {
             color: "#00000000"
             width: parent.width
-            height: 40
+            height: 100
         }
         WorkMode {
             color: "#00000000"
