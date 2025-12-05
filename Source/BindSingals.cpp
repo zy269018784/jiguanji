@@ -53,6 +53,4 @@ void BindSingals()
 
     auto * ButtonHandMode = RootObject->findChild<QObject*>("ButtonHandMode");
     QObject::connect(ButtonHandMode, SIGNAL(clicked()), &obj, SLOT(HandMode()), Qt::QueuedConnection);
-    ButtonHandMode->dumpObjectInfo();
-
 }
