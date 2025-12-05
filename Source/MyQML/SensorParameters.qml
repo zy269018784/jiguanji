@@ -38,7 +38,7 @@ Rectangle
             y: 100
             height: 50
             Label {
-                text: "标准系数"
+                text: "标定系数"
                 width: 60
                 height: parent.height
                 verticalAlignment: Text.AlignVCenter

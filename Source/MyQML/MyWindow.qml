@@ -99,8 +99,15 @@ Window {
         TabWidget {
             color: "#00000000"
             width: parent.width
-            height: 40
+            height: 300
             model: ["对焦参数", "通信参数", "传感器参数" ]
+        }
+
+        Button {
+            width: parent.width
+            height: 40
+            objectName: "ButtonReset"
+            text: "故障服复位"
         }
     }
     ColumnLayout {
@@ -112,7 +119,7 @@ Window {
         StatusArea {
             color: "#00000000"
             width: parent.width
-            height: 100
+            height: 400
         }
         SystemLog {
             color: "#FFFFFF00"
