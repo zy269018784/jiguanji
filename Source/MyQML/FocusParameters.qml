@@ -34,6 +34,7 @@ Rectangle
         }
         RowLayout {
             Button {
+                objectName: "ButtonSaveFocusParams"
                 text: "保存对焦参数"
             }
         }

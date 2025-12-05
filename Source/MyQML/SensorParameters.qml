@@ -27,6 +27,7 @@ Rectangle
         }
         RowLayout {
             Button {
+                objectName: "ButtonSaveSensorParams"
                 text: "保存传感器参数"
             }
         }

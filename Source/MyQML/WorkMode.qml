@@ -11,10 +11,12 @@ Rectangle
             horizontalAlignment: Text.AlignVCenter
         }
         RadioButton {
+            objectName: "ButtonAutoMode"
             checked: true
             text: qsTr("自动")
         }
         RadioButton {
+            objectName: "ButtonHandMode"
             text: qsTr("手动")
         }
     }

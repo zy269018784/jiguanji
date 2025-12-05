@@ -41,6 +41,7 @@ Rectangle
         }
         RowLayout {
             Button {
+                objectName: "ButtonSaveCommParams"
                 text: "保存通信参数"
             }
         }

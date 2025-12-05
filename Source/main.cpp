@@ -1,27 +1,32 @@
+#include <QApplication>
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQuickWidget>
-#include  <QDebug>
+#include <QQuickView>
+#include <QQmlContext>
+#include <QDebug>
+#include "MyObject.h"
+#include "WorkerThread.h"
+#include <QThread>
+
+MyObject obj;
+QObject *RootObject;
+WorkerThread wt;
+void BindSingals();
+
 int main(int argc, char* argv[])
 {
     QGuiApplication app(argc, argv);
-
-#if 1
-    qDebug() << "hello1";
-    QQuickWidget *view = new QQuickWidget;    return 0;
-    if (!view->engine()) {
-        qDebug() << "QML引擎初始化失败";
-        return -1;
-    }
-    qDebug() << "hello2";
-    view->resize(800, 600);
-    view->setSource(QUrl::fromLocalFile("MyQML/MyWindow.qml"));
-    view->show();
-    qDebug() << "hello3";
-#else
     QQmlApplicationEngine engine;
     engine.load(QUrl(QStringLiteral("MyQML/MyWindow.qml")));
-#endif
+    wt.start();
+    obj.moveToThread(&wt);
+    RootObject = engine.rootObjects().at(0);
+    BindSingals();
+    //auto * autoFocus = RootObject->findChild<QObject*>("autoFocus");
+    //QObject::connect(autoFocus, SIGNAL(clicked()), &obj, SLOT(onButtonClicked()), Qt::QueuedConnection);
+
+    qDebug() << "main " << QThread::currentThreadId();
 
     int ret = app.exec();
     return ret;

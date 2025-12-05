@@ -27,8 +27,9 @@ set (CMAKE_AUTORCC ON)
 
 if (USE_QT6)
 	#set (CMAKE_PREFIX_PATH G:/Project/BEngine/Library/Windows/GUI/Qt/5.9.2/msvc2017_64/lib/cmake)
-	find_package(Qt6 COMPONENTS Widgets Qml Quick QuickControls2 QuickWidgets REQUIRED)
-	set (QT_LIBS Qt6::Widgets
+	find_package(Qt6 COMPONENTS Core Widgets Qml Quick QuickControls2 QuickWidgets REQUIRED)
+	set (QT_LIBS Qt6::Core
+			     Qt6::Widgets
 				 Qt6::QuickWidgets
 				 Qt6::Quick
 				 Qt6::Qml

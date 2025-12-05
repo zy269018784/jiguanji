@@ -3,6 +3,7 @@ import QtQuick.Controls.Basic
 import QtQuick.Layouts
 Window {
     id: window
+
     width: 	800
     height: 600
     visible: true
