@@ -108,6 +108,7 @@ Window {
 
 
     }
+
     Button {
         id: control
         x: 0
