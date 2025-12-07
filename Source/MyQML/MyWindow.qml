@@ -70,11 +70,10 @@ Window {
         x: 0
         y: 0
         width: 500
-        spacing: 0
+        spacing: 10
 
 
         FocusControl {
-            color: "#00000000"
             width: parent.width
             height: 100
         }
