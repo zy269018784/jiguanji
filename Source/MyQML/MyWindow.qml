@@ -69,8 +69,8 @@ Window {
     ColumnLayout {
         x: 0
         y: 0
-        width: 300
-        spacing: 2
+        width: 500
+        spacing: 0
 
 
         FocusControl {
@@ -78,28 +78,32 @@ Window {
             width: parent.width
             height: 100
         }
+
         WorkMode {
             color: "#00000000"
             width: parent.width
-            height: 40
+            height: 150
+            pTitleHeight: 40
         }
 
         QuickOperations {
             color: "#00000000"
             width: parent.width
-            height: 40
+            height: 150
+            pTitleHeight: 40
         }
 
         SensorCalibration {
             color: "#00000000"
             width: parent.width
-            height: 40
+            height: 150
+            pTitleHeight: 40
         }
 
         TabWidget {
             color: "#00000000"
             width: parent.width
-            height: 300
+            height: 200
             model: ["对焦参数", "通信参数", "传感器参数" ]
         }
 
