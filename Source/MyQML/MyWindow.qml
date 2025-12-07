@@ -8,7 +8,8 @@ Window {
     height: 600
     visible: true
     title: qsTr("激光机")
-    color: "#F0F0F0"
+    //color: "#2D3C56"
+    color: "#2B2D30"
     Rectangle {
         visible: false
         x: parent.width - 600
