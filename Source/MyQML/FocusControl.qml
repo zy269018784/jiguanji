@@ -6,7 +6,7 @@ Rectangle
     id: rect
     property real pTitleHeight
     property real pBottonWidth
-    pBottonWidth: (width - 2 * border.width) / 5
+    pBottonWidth:  (width - 2 * border.width) / 5
     pTitleHeight: 30
     color:  "transparent"
     border.width: 2
@@ -29,10 +29,11 @@ Rectangle
         width:  rect.width - 2 * rect.border.width
         height: rect.height - rect.pTitleHeight- 2 * rect.border.width
         color:  "transparent"
+
         MyButton1 {
             objectName: "ButtonAutoFocus"
             text: "自动对焦"
-            x: 0
+            x: rect.pBottonWidth *0
             y: 0
             width: rect.pBottonWidth
             height: parent.height

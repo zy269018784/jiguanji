@@ -29,7 +29,7 @@ Rectangle
         width:  rect.width - 2 * rect.border.width
         height: rect.height - rect.pTitleHeight- 2 * rect.border.width
         color: "#ff00ff"
-        Button {
+        MyButton1 {
             id: control
             objectName: "ButtonAutoFocus"
             text: "零点校准"
@@ -37,61 +37,22 @@ Rectangle
             y: 0
             width: rect.pBottonWidth
             height: parent.height
-            contentItem: Text {
-                x:      0
-                y:      0
-                width:  parent.width
-                height: parent.height
-                text:   parent.text
-                font:   parent.font
-                color:  parent.down ? "#17a81a" : "#21be2b"
-                opacity: enabled ? 1.0 : 0.3
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideRight
-            }
         }
-        Button {
+        MyButton1 {
             objectName: "ButtonAutoFocus"
             text: "距离校准"
             x: rect.pBottonWidth
             y: 0
             width: rect.pBottonWidth
             height: parent.height
-            contentItem: Text {
-                x:      0
-                y:      0
-                width:  parent.width
-                height: parent.height
-                text:   parent.text
-                font:   parent.font
-                color:  parent.down ? "#17a81a" : "#21be2b"
-                opacity: enabled ? 1.0 : 0.3
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideRight
-            }
         }
-        Button {
+        MyButton1 {
             objectName: "ButtonAutoFocus"
             text: "线性度校准"
             x: rect.pBottonWidth * 2
             y: 0
             width: rect.pBottonWidth
             height: parent.height
-            contentItem: Text {
-                x:      0
-                y:      0
-                width:  parent.width
-                height: parent.height
-                text:   parent.text
-                font:   parent.font
-                color:  parent.down ? "#17a81a" : "#21be2b"
-                opacity: enabled ? 1.0 : 0.3
-                horizontalAlignment: Text.AlignHCenter
-                verticalAlignment: Text.AlignVCenter
-                elide: Text.ElideRight
-            }
         }
     }
 }

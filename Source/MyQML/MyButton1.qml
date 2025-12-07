@@ -8,11 +8,11 @@ Button
         width:  parent.width
         height: parent.height
         text:   parent.text
-        font:   parent.font
+       // font:   parent.font
         color:  "#FFFFFF"
         opacity: enabled ? 1.0 : 0.3
         horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
+        verticalAlignment:   Text.AlignVCenter
         elide: Text.ElideRight
     }
     background: Rectangle {
