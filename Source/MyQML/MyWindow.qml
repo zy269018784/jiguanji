@@ -106,11 +106,34 @@ Window {
             model: ["对焦参数", "通信参数", "传感器参数" ]
         }
 
-        Button {
+
+    }
+    Button {
+        id: control
+        x: 0
+        y: 0
+        anchors.left: parent.left
+        anchors.bottom: parent.bottom
+        width:  100
+        height: 100
+        objectName: "ButtonReset"
+        text: "故障服复位"
+        contentItem: Text {
+            text: control.text
+            font: control.font
+            opacity: enabled ? 1.0 : 0.3
+            color: control.down ? "#FF0000" : "#FFFFFF"
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            elide: Text.ElideRight
+        }
+        background: Rectangle {
             width: parent.width
-            height: 40
-            objectName: "ButtonReset"
-            text: "故障服复位"
+            height: parent.height
+            radius: parent.width / 2
+            border.color: control.down ? "#FF0000" : "#00FF00"
+            border.width: 1
+            color: control.down ? "#FFFFFF" : "#FF0000"
         }
     }
     ColumnLayout {
