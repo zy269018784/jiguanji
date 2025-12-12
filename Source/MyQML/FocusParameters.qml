@@ -3,17 +3,20 @@ import QtQuick.Controls.Basic
 import QtQuick.Layouts
 Rectangle
 {
+    id: rect
+    property color color
+    color: "#FFFFFF"
     ColumnLayout {
         Rectangle {
             y: 0
             height: 50
             Label {
-
                 width: 60
                 height: parent.height
                 text: "最大速度"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
+                color: rect.color
             }
             MyTextField {
                 objectName: "LabelMaxSpeed"
@@ -24,12 +27,12 @@ Rectangle
             y: 50
             height: 50
             Label {
-
                 width: 60
                 height: parent.height
                 text: "最小速度"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
+                color: rect.color
             }
             MyTextField {
                 objectName: "LabelMinSpeed"
@@ -45,6 +48,7 @@ Rectangle
                 text: "对焦精度"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
+                color: rect.color
             }
             MyTextField {
                 objectName: "LabelFocusPrecision"
@@ -60,6 +64,7 @@ Rectangle
                 text: "超时时间"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
+                color: rect.color
             }
             MyTextField {
                 objectName: "LabelTimeout"

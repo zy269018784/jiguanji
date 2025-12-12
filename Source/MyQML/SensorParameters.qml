@@ -3,6 +3,9 @@ import QtQuick.Controls.Basic
 import QtQuick.Layouts
 Rectangle
 {
+    id: rect
+    property color color
+    color: "#Ff0000"
     ColumnLayout {
         Rectangle {
             y: 0
@@ -13,6 +16,7 @@ Rectangle
                 height: parent.height
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
+                color: rect.color
             }
             MyTextField {
                 objectName: "LabelSampleRate"
@@ -28,6 +32,7 @@ Rectangle
                 height: parent.height
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
+                color: rect.color
             }
             MyTextField {
                 objectName: "LabelFilterLevel"
@@ -43,6 +48,7 @@ Rectangle
                 height: parent.height
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
+                color: rect.color
             }
             MyTextField {
                 objectName: "LabelStandardCoefficient"

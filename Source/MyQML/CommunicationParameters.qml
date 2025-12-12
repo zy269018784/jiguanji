@@ -3,6 +3,9 @@ import QtQuick.Controls.Basic
 import QtQuick.Layouts
 Rectangle
 {
+    id: rect
+    property color color
+    color: "#FFFFFF"
     ColumnLayout {
         Rectangle {
             y: 0
@@ -13,6 +16,7 @@ Rectangle
                 text: "串口号"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
+                color: rect.color
             }
             MyTextField {
                 objectName: "LabelPort"
@@ -28,6 +32,7 @@ Rectangle
                 text: "波特率"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
+                color: rect.color
             }
             MyTextField {
                 objectName: "LabelBaudRate"
@@ -43,6 +48,7 @@ Rectangle
                 text: "数据位"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
+                color: rect.color
             }
             MyTextField {
                 objectName: "LabelDataBit"
@@ -58,6 +64,7 @@ Rectangle
                 text: "校验位"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
+                color: rect.color
             }
             MyTextField {
                 objectName: "LabelParityBit"
@@ -73,6 +80,7 @@ Rectangle
                 text: "停止位"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
+                color: rect.color
             }
             MyTextField {
                 objectName: "LabelStopBit"
