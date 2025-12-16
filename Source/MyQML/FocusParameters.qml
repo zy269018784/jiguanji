@@ -5,7 +5,7 @@ Rectangle
 {
     id: rect
     property color color
-    color: "#FFFFFF"
+    color: "#FF0000"
     ColumnLayout {
         Rectangle {
             y: 0

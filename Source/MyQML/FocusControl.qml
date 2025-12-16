@@ -3,19 +3,30 @@ import QtQuick.Controls.Basic
 import QtQuick.Layouts
 Rectangle
 {
-    id: rect
+    id: control
     property real pTitleHeight
     property real pBottonWidth
-    pBottonWidth:  (width - 2 * border.width) / 5
+    property real spacing
+    property color buttonDefaultColor
+    property color buttonHoveredColor
+    property color buttonPressedColor
+    property color textColor
     pTitleHeight: 30
-    color:  "transparent"
+    pBottonWidth:  (width - 2 * border.width - 6 * spacing) / 5
+    spacing: 4
+    buttonDefaultColor:   "#0099ff"
+    buttonHoveredColor:   "#008deb"
+    buttonPressedColor:   "#0080d6"
+    textColor: "#ffffff"
+    color:  "#f5f5f5"
     border.width: 2
-    border.color: "#00ff00"
+    border.color: "#ebebeb"
     Rectangle {
-        x: rect.border.width
-        y: rect.border.width
-        width: rect.width - 2 * rect.border.width
-        height: rect.pTitleHeight
+        x: control.border.width
+        y: control.border.width
+        width: control.width - 2 * control.border.width
+        height: control.pTitleHeight
+        color:  control.color
         Label {
             anchors.fill: parent
             text: "聚焦控制"
@@ -24,50 +35,49 @@ Rectangle
         }
     }
     Rectangle {
-        x: rect.border.width
-        y: rect.border.width + rect.pTitleHeight
-        width:  rect.width - 2 * rect.border.width
-        height: rect.height - rect.pTitleHeight- 2 * rect.border.width
-        color:  "transparent"
-
-        MyButton1 {
+        x: control.border.width
+        y: control.border.width + control.pTitleHeight
+        width:  control.width - 2 * control.border.width
+        height: control.height - control.pTitleHeight- 2 * control.border.width
+        color:  control.color
+        MyButton3 {
             objectName: "ButtonAutoFocus"
             text: "自动对焦"
-            x: rect.pBottonWidth *0
+            x: control.pBottonWidth * 0 + control.spacing * 1
             y: 0
-            width: rect.pBottonWidth
+            width: control.pBottonWidth
             height: parent.height
         }
-        MyButton1 {
+        MyButton3 {
             objectName: "ButtonUp"
             text: "手动上调"
-            x: rect.pBottonWidth * 1
+            x: control.pBottonWidth * 1 + control.spacing * 2
             y: 0
-            width: rect.pBottonWidth
+            width: control.pBottonWidth
             height: parent.height
         }
-        MyButton1 {
+        MyButton3 {
             objectName: "ButtonDown"
             text: "手动下调"
-            x: rect.pBottonWidth * 2
+            x: control.pBottonWidth * 2 + control.spacing * 3
             y: 0
-            width: rect.pBottonWidth
+            width: control.pBottonWidth
             height: parent.height
         }
-        MyButton1 {
+        MyButton3 {
             objectName: "ButtonStop"
             text: "停止"
-            x: rect.pBottonWidth * 3
+            x: control.pBottonWidth * 3 + control.spacing * 4
             y: 0
-            width: rect.pBottonWidth
+            width: control.pBottonWidth
             height: parent.height
         }
-        MyButton1 {
+        MyButton3 {
             objectName: "ButtonEmeStop"
             text: "紧急停止"
-            x: rect.pBottonWidth * 4
+            x: control.pBottonWidth * 4 + control.spacing * 5
             y: 0
-            width: rect.pBottonWidth
+            width: control.pBottonWidth
             height: parent.height
         }
     }

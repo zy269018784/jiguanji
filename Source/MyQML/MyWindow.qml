@@ -3,13 +3,21 @@ import QtQuick.Controls.Basic
 import QtQuick.Layouts
 Window {
     id: window
-
+    property color buttonDefaultColor
+    property color buttonHoveredColor
+    property color buttonPressedColor
+    property color textColor
+    buttonDefaultColor:   "#0099ff"
+    buttonHoveredColor:   "#008deb"
+    buttonPressedColor:   "#0080d6"
+    textColor: "#ffffff"
     width: 	800
     height: 600
     visible: true
     title: qsTr("激光机")
     //color: "#2D3C56"
-    color: "#2B2D30"
+    //color: "#2B2D30"
+    color:  "#f5f5f5"
     Rectangle {
         visible: false
         x: parent.width - 600
@@ -70,7 +78,7 @@ Window {
     ColumnLayout {
         x: 0
         y: 0
-        width: parent.width / 2
+        width: 350
         spacing: 10
 
         WorkMode {
@@ -82,7 +90,7 @@ Window {
 
         FocusControl {
             width: parent.width
-            height: 100
+            height: 70
             pTitleHeight: 30
         }
 
@@ -101,13 +109,11 @@ Window {
         }
 
         TabWidget {
-            color: "#00000000"
+           // color: "#00000000"
             width: parent.width
-            height: 400
+            height: 600
             model: ["对焦参数", "通信参数", "传感器参数" ]
         }
-
-
     }
 
     Button {

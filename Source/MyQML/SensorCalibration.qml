@@ -31,7 +31,7 @@ Rectangle
         color: "#ff00ff"
         MyButton1 {
             id: control
-            objectName: "ButtonAutoFocus"
+            objectName: "ButtonZeroPointCalibration"
             text: "零点校准"
             x: 0
             y: 0
@@ -39,7 +39,7 @@ Rectangle
             height: parent.height
         }
         MyButton1 {
-            objectName: "ButtonAutoFocus"
+            objectName: "DistanceCalibration"
             text: "距离校准"
             x: rect.pBottonWidth
             y: 0
@@ -47,7 +47,7 @@ Rectangle
             height: parent.height
         }
         MyButton1 {
-            objectName: "ButtonAutoFocus"
+            objectName: "ButtonLinearCalibration"
             text: "线性度校准"
             x: rect.pBottonWidth * 2
             y: 0

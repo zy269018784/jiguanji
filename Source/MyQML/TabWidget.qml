@@ -43,24 +43,24 @@ Rectangle
         x: 0
         y: 40
         width: parent.width
-        height: 100
-        color: "#00000000"
+        height: rect.height - 40
+        //color: "#00000000"
         visible: tabBar.currentIndex === 0
     }
     CommunicationParameters {
         x: 0
         y: 40
         width: parent.width
-        height: 100
-        color: "#00000000"
+        height: rect.height - 40
+       // color: "#00000000"
         visible: tabBar.currentIndex === 1
     }
     SensorParameters {
         x: 0
         y: 40
         width: parent.width
-        height: 100
-        color: "#00000000"
+        height: rect.height - 40
+       // color: "#00000000"
         visible: tabBar.currentIndex === 2
     }
 }
