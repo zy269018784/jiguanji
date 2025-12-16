@@ -94,7 +94,7 @@ Rectangle
             textColor: control.textColor
         }
         MyButton3 {
-            objectName: "ButtonEmeStop"
+            objectName: "ButtonEMStop"
             text: "紧急停止"
             x: control.pBottonWidth * 4 + control.spacing * 5
             y: 0

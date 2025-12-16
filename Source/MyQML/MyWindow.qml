@@ -112,15 +112,15 @@ Window {
         }
     }
     ColumnLayout {
-        x: 350
+        x: 350 + 2
         y: 0
-        width:  window.width - 350
+        width:  window.width - 350 - 2
         spacing: 0
 
         StatusArea {
             color: "#00000000"
             width: parent.width
-            height: 400
+            height: 200
         }
         /*
         SystemLog {
