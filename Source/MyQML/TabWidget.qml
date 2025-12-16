@@ -3,20 +3,27 @@ import QtQuick.Controls.Basic
 import QtQuick.Layouts
 Rectangle
 {
-    id: rect
+    id: control
     property var model
+    property real pTitleHeight
+    property real spacing
+    pTitleHeight: 40
+    spacing: 4
+    border.width: 2
+    border.color: "#ebebeb"
     TabBar {
         id: tabBar
         currentIndex: 0
-        width: parent.width
-        height: 40
-        //currentIndex: swipeView.currentIndex
+        x: control.border.width
+        y: control.border.width
+        width: control.width - 2 * control.border.width
+        height: control.pTitleHeight
         Repeater {
-            model: rect.model
+            model: control.model
 
             TabButton {
                 text: modelData
-                width: implicitWidth
+                width: tabBar.width / 3
                 padding: 10
 
                 // 自定义样式
@@ -40,27 +47,24 @@ Rectangle
     }
 
     FocusParameters {
-        x: 0
-        y: 40
-        width: parent.width
-        height: rect.height - 40
-        //color: "#00000000"
+        x: control.border.width
+        y: control.border.width + control.pTitleHeight
+        width:  control.width - 2 * control.border.width
+        height: control.height - control.pTitleHeight- 2 * control.border.width - control.spacing
         visible: tabBar.currentIndex === 0
     }
     CommunicationParameters {
-        x: 0
-        y: 40
-        width: parent.width
-        height: rect.height - 40
-       // color: "#00000000"
+        x: control.border.width
+        y: control.border.width + control.pTitleHeight
+        width:  control.width - 2 * control.border.width
+        height: control.height - control.pTitleHeight- 2 * control.border.width - control.spacing
         visible: tabBar.currentIndex === 1
     }
     SensorParameters {
-        x: 0
-        y: 40
-        width: parent.width
-        height: rect.height - 40
-       // color: "#00000000"
+        x: control.border.width
+        y: control.border.width + control.pTitleHeight
+        width:  control.width - 2 * control.border.width
+        height: control.height - control.pTitleHeight- 2 * control.border.width - control.spacing
         visible: tabBar.currentIndex === 2
     }
 }

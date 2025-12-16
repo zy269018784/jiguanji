@@ -73,62 +73,79 @@ Window {
         //from: 0
         value: 70
     }
-    ColumnLayout {
+    Rectangle {
         x: 0
         y: 0
         width: 350
-        spacing: 2
+      //  spacing: 2
 
         WorkMode {
+            id: controlWorkMode
             color: "#00000000"
             width: parent.width
             height: 70
+            x: 0
+            y: 0
             pTitleHeight: 40
         }
 
         FocusControl {
+            id: controlFocusControl
             buttonDefaultColor:   window.buttonDefaultColor
             buttonHoveredColor:   window.buttonHoveredColor
             buttonPressedColor:   window.buttonPressedColor
             textColor: window.textColor
             width: parent.width
             height: 70
+            x: 0
+            y: controlWorkMode.y + controlWorkMode.height + 2
             pTitleHeight: 30
         }
 
         QuickOperations {
+            id: controlQuickOperations
             buttonDefaultColor:   window.buttonDefaultColor
             buttonHoveredColor:   window.buttonHoveredColor
             buttonPressedColor:   window.buttonPressedColor
             textColor: window.textColor
             width: parent.width
             height: 70
+            x: 0
+            y: controlFocusControl.y + controlFocusControl.height + 2
             pTitleHeight: 30
         }
 
         SensorCalibration {
+            id: controlSensorCalibration
             buttonDefaultColor:   window.buttonDefaultColor
             buttonHoveredColor:   window.buttonHoveredColor
             buttonPressedColor:   window.buttonPressedColor
             textColor: window.textColor
             width: parent.width
             height: 70
+            x: 0
+            y: controlQuickOperations.y + controlQuickOperations.height + 2
             pTitleHeight: 30
         }
 
         TabWidget {
+            x: 0
+            //y: 0
             width: parent.width
-            height: 600
+            height: window.height - (controlSensorCalibration.y + controlSensorCalibration.height + 2)
+            y:  (controlSensorCalibration.y + controlSensorCalibration.height + 2)
+            pTitleHeight: 40
+            spacing: 4
             model: ["对焦参数", "通信参数", "传感器参数" ]
         }
     }
 
     Button {
         id: control
-        x: 0
+        x: 500
         y: 0
-        anchors.left: parent.left
-        anchors.bottom: parent.bottom
+      //  anchors.left: parent.left
+       // anchors.bottom: parent.bottom
         width:  100
         height: 100
         objectName: "ButtonReset"
@@ -162,10 +179,12 @@ Window {
             width: parent.width
             height: 400
         }
+        /*
         SystemLog {
             color: "#FFFFFF00"
             width: parent.width
             height: 300
         }
+        */
     }
 }

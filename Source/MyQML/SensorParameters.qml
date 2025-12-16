@@ -1,65 +1,91 @@
 import QtQuick
 import QtQuick.Controls.Basic
 import QtQuick.Layouts
+
 Rectangle
 {
-    id: rect
+    id: control
+    property real rowHeight
+    property real rowSpacing
     property color color
-    color: "#Ff0000"
-    ColumnLayout {
+    rowSpacing: 2
+    rowHeight: (control.height - 3 * rowSpacing) / 4
+
+    color: "#FF0000"
+    ColumnLayout
+    {
+        spacing: 2
+        height: parent.height
         Rectangle {
-            y: 0
-            height: 50
+            width:  control.width
+            height: control.rowHeight
+            x: 4
+            y: control.rowHeight * 0
             Label {
-                text: "采样率"
                 width: 60
                 height: parent.height
+                text: "采样率"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
-                color: rect.color
             }
             MyTextField {
                 objectName: "LabelSampleRate"
+                height: parent.height
+                y: 0
                 x: 60
             }
         }
         Rectangle {
-            y: 50
-            height: 50
+            width:  control.width
+            height: control.rowHeight
+            x: 4
+            y: (control.rowHeight  + control.rowSpacing) * 1
             Label {
-                text: "滤波等级"
-                width: 60
+                width: 60 + 4
                 height: parent.height
+                text: "滤波等级"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
-                color: rect.color
             }
             MyTextField {
                 objectName: "LabelFilterLevel"
+                height: parent.height
+                y: 0
                 x: 60
             }
         }
         Rectangle {
-            y: 100
-            height: 50
+            width:  control.width
+            height: control.rowHeight
+            x: 4
+            y: (control.rowHeight  + control.rowSpacing) * 2
             Label {
-                text: "标定系数"
-                width: 60
+                width: 60 + 4
                 height: parent.height
+                text: "标定系数"
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignVCenter
-                color: rect.color
             }
             MyTextField {
                 objectName: "LabelStandardCoefficient"
+                height: parent.height
+                y: 0
                 x: 60
             }
         }
         Rectangle {
-            y: 150
-            Button {
+            height: control.rowHeight
+            x: 4
+            y: (control.rowHeight  + control.rowSpacing) * 3
+            MyButton3 {
                 objectName: "ButtonSaveSensorParams"
                 text: "保存传感器参数"
+                buttonDefaultColor:   "#0099ff"
+                buttonHoveredColor:   "#008deb"
+                buttonPressedColor:   "#0080d6"
+                textColor: "#ffffff"
+                //width: parent.width
+                height: parent.height
             }
         }
     }

@@ -1,6 +1,13 @@
 import QtQuick
 import QtQuick.Controls.Basic
 import QtQuick.Layouts
+/*
+*   border = 2
+*   title = 30
+*   content = 32
+*   spacing = 4
+*   border = 2
+* */
 Rectangle
 {
     id: control
