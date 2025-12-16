@@ -9,7 +9,7 @@ Rectangle
     property real rowSpacing
     property color color
     rowSpacing: 2
-    rowHeight: (control.height - 3 * rowSpacing) / 4
+    rowHeight: (control.height - 2 * rowSpacing) / 4
 
     color: "#FF0000"
     ColumnLayout
@@ -20,7 +20,7 @@ Rectangle
             width:  control.width
             height: control.rowHeight
             x: 4
-            y: control.rowHeight * 0
+            y: (control.rowHeight  + control.rowSpacing) * 0
             Label {
                 width: 60
                 height: parent.height

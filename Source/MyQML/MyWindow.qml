@@ -16,68 +16,11 @@ Window {
     visible: true
     title: qsTr("激光机")
     color:  "#f5f5f5"
-    Rectangle {
-        visible: false
-        x: parent.width - 600
-        y: 0
-        width: 200
-        height: 200
-        border.color: "#00ff00"
 
-        Button {
-            x: 0
-            y: 0
-            width: 50
-            height: 50
-            text: qsTr("上升")
-            autoRepeat: true
-            autoRepeatDelay: 10
-            onClicked: {
-                controlProgressBar.value++;
-                //if (controlProgressBar.value < controlProgressBar.t)
-            }
-        }
-
-        Button {
-            x: 0
-            y: 60
-            width: 50
-            height: 50
-            text: qsTr("急停")
-        }
-
-        Button {
-            x: 0
-            y: 150
-            width: 50
-            height: 50
-            text: qsTr("下降")
-            autoRepeat: true
-            autoRepeatDelay: 10
-            onClicked: {
-                controlProgressBar.value--;
-            }
-        }
-    }
-
-
-    TextedHeightWidget
-    {
-        visible: false
-        id: controlProgressBar
-        x: window.width - 600
-        y: 0
-        width: 200
-        height: parent.height
-        to: 100
-        //from: 0
-        value: 70
-    }
     Rectangle {
         x: 0
         y: 0
         width: 350
-      //  spacing: 2
 
         WorkMode {
             id: controlWorkMode
@@ -145,7 +88,7 @@ Window {
         x: 500
         y: 0
       //  anchors.left: parent.left
-       // anchors.bottom: parent.bottom
+        anchors.bottom: parent.bottom
         width:  100
         height: 100
         objectName: "ButtonReset"
