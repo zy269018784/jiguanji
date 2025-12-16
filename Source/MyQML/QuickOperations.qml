@@ -3,19 +3,25 @@ import QtQuick.Controls.Basic
 import QtQuick.Layouts
 Rectangle
 {
-    id: rect
+    id: control
     property real pTitleHeight
     property real pBottonWidth
-    pBottonWidth: (width - 2 * border.width) / 3
+    property real spacing
+    property color buttonDefaultColor
+    property color buttonHoveredColor
+    property color buttonPressedColor
+    property color textColor
+    pBottonWidth: (width - 2 * border.width - 4 * spacing) / 3
     pTitleHeight: 30
-    color: "#00ff00"
+    spacing: 4
+    color:  "#f5f5f5"
     border.width: 2
-    border.color: "#00ff00"
+    border.color: "#ebebeb"
     Rectangle {
-        x: rect.border.width
-        y: rect.border.width
-        width: rect.width - 2 * rect.border.width
-        height: rect.pTitleHeight
+        x: control.border.width
+        y: control.border.width
+        width: control.width - 2 * control.border.width
+        height: control.pTitleHeight
         Label {
             anchors.fill: parent
             text: "快速操作"
@@ -24,34 +30,46 @@ Rectangle
         }
     }
     Rectangle {
-        x: rect.border.width
-        y: rect.border.width + rect.pTitleHeight
-        width:  rect.width - 2 * rect.border.width
-        height: rect.height - rect.pTitleHeight- 2 * rect.border.width
-        color: "#ff00ff"
-        MyButton1 {
+        x: control.border.width
+        y: control.border.width + control.pTitleHeight
+        width:  control.width - 2 * control.border.width
+        height: control.height - control.pTitleHeight- 2 * control.border.width - control.spacing
+        color:  control.color
+        MyButton3 {
             objectName: "ButtonSetZero"
             text: "一键归零"
-            x: 0
+            x: control.pBottonWidth * 0 + control.spacing * 1
             y: 0
-            width: rect.pBottonWidth
+            width: control.pBottonWidth
             height: parent.height
+            buttonDefaultColor:   control.buttonDefaultColor
+            buttonHoveredColor:   control.buttonHoveredColor
+            buttonPressedColor:   control.buttonPressedColor
+            textColor: control.textColor
         }
-        MyButton1 {
+        MyButton3 {
             objectName: "ButtonSetPos1"
             text: "常用位置1"
-            x: rect.pBottonWidth
+            x: control.pBottonWidth * 1 + control.spacing * 2
             y: 0
-            width: rect.pBottonWidth
+            width: control.pBottonWidth
             height: parent.height
+            buttonDefaultColor:   control.buttonDefaultColor
+            buttonHoveredColor:   control.buttonHoveredColor
+            buttonPressedColor:   control.buttonPressedColor
+            textColor: control.textColor
         }
-        MyButton1 {
+        MyButton3 {
             objectName: "ButtonSetPos2"
             text: "常用位置2"
-            x: rect.pBottonWidth * 2
+            x: control.pBottonWidth * 2 + control.spacing * 3
             y: 0
-            width: rect.pBottonWidth
+            width: control.pBottonWidth
             height: parent.height
+            buttonDefaultColor:   control.buttonDefaultColor
+            buttonHoveredColor:   control.buttonHoveredColor
+            buttonPressedColor:   control.buttonPressedColor
+            textColor: control.textColor
         }
     }
 }

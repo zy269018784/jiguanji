@@ -4,6 +4,7 @@ import QtQuick.Layouts
 Rectangle
 {
     id: control
+    //property ListModel model
     property real pTitleHeight
     property real pBottonWidth
     property real spacing
@@ -14,10 +15,6 @@ Rectangle
     pTitleHeight: 30
     pBottonWidth:  (width - 2 * border.width - 6 * spacing) / 5
     spacing: 4
-    buttonDefaultColor:   "#0099ff"
-    buttonHoveredColor:   "#008deb"
-    buttonPressedColor:   "#0080d6"
-    textColor: "#ffffff"
     color:  "#f5f5f5"
     border.width: 2
     border.color: "#ebebeb"
@@ -30,6 +27,7 @@ Rectangle
         Label {
             anchors.fill: parent
             text: "聚焦控制"
+           // text:  (model && model.count !== undefined) ? model.count.toString() : "A"
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
         }
@@ -38,7 +36,7 @@ Rectangle
         x: control.border.width
         y: control.border.width + control.pTitleHeight
         width:  control.width - 2 * control.border.width
-        height: control.height - control.pTitleHeight- 2 * control.border.width
+        height: control.height - control.pTitleHeight- 2 * control.border.width - control.spacing
         color:  control.color
         MyButton3 {
             objectName: "ButtonAutoFocus"
@@ -47,6 +45,10 @@ Rectangle
             y: 0
             width: control.pBottonWidth
             height: parent.height
+            buttonDefaultColor:   control.buttonDefaultColor
+            buttonHoveredColor:   control.buttonHoveredColor
+            buttonPressedColor:   control.buttonPressedColor
+            textColor: control.textColor
         }
         MyButton3 {
             objectName: "ButtonUp"
@@ -55,6 +57,10 @@ Rectangle
             y: 0
             width: control.pBottonWidth
             height: parent.height
+            buttonDefaultColor:   control.buttonDefaultColor
+            buttonHoveredColor:   control.buttonHoveredColor
+            buttonPressedColor:   control.buttonPressedColor
+            textColor: control.textColor
         }
         MyButton3 {
             objectName: "ButtonDown"
@@ -63,6 +69,10 @@ Rectangle
             y: 0
             width: control.pBottonWidth
             height: parent.height
+            buttonDefaultColor:   control.buttonDefaultColor
+            buttonHoveredColor:   control.buttonHoveredColor
+            buttonPressedColor:   control.buttonPressedColor
+            textColor: control.textColor
         }
         MyButton3 {
             objectName: "ButtonStop"
@@ -71,6 +81,10 @@ Rectangle
             y: 0
             width: control.pBottonWidth
             height: parent.height
+            buttonDefaultColor:   control.buttonDefaultColor
+            buttonHoveredColor:   control.buttonHoveredColor
+            buttonPressedColor:   control.buttonPressedColor
+            textColor: control.textColor
         }
         MyButton3 {
             objectName: "ButtonEmeStop"
@@ -79,6 +93,10 @@ Rectangle
             y: 0
             width: control.pBottonWidth
             height: parent.height
+            buttonDefaultColor:   control.buttonDefaultColor
+            buttonHoveredColor:   control.buttonHoveredColor
+            buttonPressedColor:   control.buttonPressedColor
+            textColor: control.textColor
         }
     }
 }

@@ -15,8 +15,6 @@ Window {
     height: 600
     visible: true
     title: qsTr("激光机")
-    //color: "#2D3C56"
-    //color: "#2B2D30"
     color:  "#f5f5f5"
     Rectangle {
         visible: false
@@ -79,37 +77,46 @@ Window {
         x: 0
         y: 0
         width: 350
-        spacing: 10
+        spacing: 2
 
         WorkMode {
             color: "#00000000"
             width: parent.width
-            height: 150
+            height: 70
             pTitleHeight: 40
         }
 
         FocusControl {
+            buttonDefaultColor:   window.buttonDefaultColor
+            buttonHoveredColor:   window.buttonHoveredColor
+            buttonPressedColor:   window.buttonPressedColor
+            textColor: window.textColor
             width: parent.width
             height: 70
             pTitleHeight: 30
         }
 
         QuickOperations {
-            color: "#00000000"
+            buttonDefaultColor:   window.buttonDefaultColor
+            buttonHoveredColor:   window.buttonHoveredColor
+            buttonPressedColor:   window.buttonPressedColor
+            textColor: window.textColor
             width: parent.width
-            height: 100
+            height: 70
             pTitleHeight: 30
         }
 
         SensorCalibration {
-            color: "#00000000"
+            buttonDefaultColor:   window.buttonDefaultColor
+            buttonHoveredColor:   window.buttonHoveredColor
+            buttonPressedColor:   window.buttonPressedColor
+            textColor: window.textColor
             width: parent.width
-            height: 100
+            height: 70
             pTitleHeight: 30
         }
 
         TabWidget {
-           // color: "#00000000"
             width: parent.width
             height: 600
             model: ["对焦参数", "通信参数", "传感器参数" ]
@@ -145,9 +152,9 @@ Window {
         }
     }
     ColumnLayout {
-        x: window.width - 600
+        x: 350
         y: 0
-        width: 600
+        width:  window.width - 350
         spacing: 0
 
         StatusArea {
