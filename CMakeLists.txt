@@ -59,8 +59,8 @@ endif ()
 
 add_executable (${PROJECT_NAME}  ${SRC_LIST})
 
-list(APPEND INCLUDE_PATH ${SRC_PREFIX})
-list(APPEND LIBRARYS ${QT_LIBS})
+list(APPEND INCLUDE_PATH ${SRC_PREFIX} ${LIBRARY_PATH}/CSerialPort/include)
+list(APPEND LIBRARYS ${QT_LIBS} ${LIBRARY_PATH}/CSerialPort/lib/libcserialport.lib)
 
 if (CMAKE_HOST_SYSTEM_NAME MATCHES "Windows")
 
